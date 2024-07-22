@@ -19,7 +19,8 @@ Requisitos Previos
     from google.colab import drive
     drive.mount('/content/drive')
   ```
-  ![image](https://github.com/user-attachments/assets/8bf56bbf-3121-4264-9075-c2083af302e8)
+
+  ![image](https://github.com/user-attachments/assets/93d78816-5e51-4ad2-9bda-abc1ab6e45dc)
 
 
   ### RECURSOS EXTRAS:
