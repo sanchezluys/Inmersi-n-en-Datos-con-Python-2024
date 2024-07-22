@@ -16,7 +16,11 @@ En esta clase, veremos cómo:
 - Limpiar y preparar los datos para el análisis.
 - Realizar análisis exploratorio de datos (EDA) para obtener información relevante.
 
-[Ver la clase](https://www.aluracursos.com/inmersion-datos/clase01-preprocesamiento-y-exploracion-de-datos?utm_campaign=al_im_datos_4_clase_01&utm_medium=email&utm_source=RD+Station)
+### Clase 02: pendiente
+En esta clase, veremos cómo:
+
+- pendiente
+
 
 ## Requisitos
 
@@ -31,3 +35,20 @@ En esta clase, veremos cómo:
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/tu-usuario/inmersion-datos-python.git
+
+   Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue los siguientes pasos:
+
+    Haz un fork del repositorio.
+    Crea una nueva rama con tu contribución: git checkout -b mi-contribucion
+    Realiza tus cambios y haz commit de los mismos: git commit -m 'Agregar mi contribución'
+    Sube tus cambios a tu repositorio fork: git push origin mi-contribucion
+    Crea un pull request en GitHub.
+
+Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+Contacto
+
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de github
