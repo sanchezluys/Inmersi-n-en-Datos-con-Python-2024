@@ -1,3 +1,0 @@
-### Retos
-
-### Clase 1
