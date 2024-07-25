@@ -289,6 +289,26 @@ otro ejemplo:
   # Mostrar el histograma
   plt.show()
 ```
+- se crea una funcion para crear los histogramas de todas las variables
+
+```python
+  def analisis_exploratorio():
+    global df_banco
+    histogramas = ['sexo','estado_civil','rango_plazos_credito','rango_edad','default']
+    lista_histogramas = list(enumerate(histogramas))
+    plt.figure(figsize = (30,20))
+    plt.title('Histogramas')
+    for i in lista_histogramas:
+      plt.subplot(3, 2, i[0]+1)
+      sns.countplot(x = i[1], data = df_banco)
+      plt.xlabel(i[1], fontsize=20)
+      plt.ylabel('Total', fontsize=20)
+```
+
+### Mentoria Clase 01
+
+https://www.youtube.com/watch?v=4c5EvzqOsaU
+
 
 ### GOOGLE COLAB
 

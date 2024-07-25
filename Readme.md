@@ -6,6 +6,16 @@ Este repositorio contiene los proyectos y ejercicios realizados durante el curso
 
 En este curso, aprenderemos a preprocesar y explorar datos utilizando Python y librerías como Pandas, Numpy, y Matplotlib. El curso está dividido en varias clases donde cubrimos diferentes aspectos del análisis de datos.
 
+## Tareas Principales
+1. Preposesamiento de datos
+2. Exploracion de datos
+3. Construccion de modelos
+4. Evaluacion y seleccion del modelo
+
+
+
+
+
 ## 📚 Clases
 
 ### 🧩 Clase 01: Preprocesamiento y Exploración de Datos
