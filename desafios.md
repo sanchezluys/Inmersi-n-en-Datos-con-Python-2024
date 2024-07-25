@@ -48,15 +48,15 @@ Correlación, positiva, negativa, 0-1, 0-1, con este grafico se puede analizar q
 
 ![Mapa de Calor](/clase01/imagenes/mapa_calor.png)
 
-Resultados:
-- Estado civil -0.74
-- Creditos en el banco +0.44
-- Plazos del credito +0.61
-- Historial crediticio -0.23
-- Estatus de chequera -0.35
-- Rango de Edad -0.25
-- Tipo de alojamiento  +0.35
-- Ahorros -0.22
+Variables que se consideran importantes para el modelo:
+- Estado civil          -0.74
+- Creditos en el banco  +0.44
+- Plazos del credito    +0.61
+- Historial crediticio  -0.23
+- Estatus de chequera   -0.35
+- Rango de Edad         -0.25
+- Tipo de alojamiento   +0.35
+- Ahorros               -0.22
 
 ##### 3.- Crear una conclusión para cada uno de los gráficos del histograma. Mirar los datos y extraer conclusiones, porque es una habilidad esencial
 
