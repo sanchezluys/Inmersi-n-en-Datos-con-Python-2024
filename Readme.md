@@ -39,7 +39,20 @@ En esta clase, veremos cómo:
    ```bash
    git clone https://github.com/tu-usuario/inmersion-datos-python.git
 
+# Diagrama de Flujo del Proceso de Datos
 
+```mermaid
+flowchart TD
+    A[Inicio] --> B[Revisar datos]
+    B --> C{¿Existen datos categóricos?}
+    C -->|Sí| D[Convertir datos categóricos en números]
+    D --> E[Revisar si existen datos discretos]
+    C -->|No| E
+    E --> F{¿Existen datos discretos?}
+    F -->|Sí| G[Revisar y ajustar datos discretos]
+    F -->|No| H[Fin]
+    G --> H
+```
 
 2. Contribuciones
 
