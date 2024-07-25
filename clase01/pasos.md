@@ -210,6 +210,85 @@ Requisitos Previos
                         'duration_in_month','credit_amount','default']
   df_banco[variables_discretas].tail(3)
 ```
+- luego se crea una nueva columna llamada sexo en el df
+
+```python
+  dic_sexo = {2:1,5:1,1:0,3:0,4:0}
+  df_banco['sexo'] = df_banco['personal_status_sex'].map(dic_sexo)
+```
+- se crean esas nuevas columnas con una funcion:
+
+  
+```python
+  def feature_engineering():
+      global df_banco
+      dic_sexo = {2:1, 5:1, 1:0, 3:0, 4:0}
+      dic_est_civil = {3:1, 5:1, 1:0, 2:0, 4:0}
+      df_banco['sexo'] = df_banco['personal_status_sex'].map(dic_sexo)
+      df_banco['estado_civil'] = df_banco['personal_status_sex'].map(dic_est_civil)
+      df_banco['rango_edad'] = pd.cut(x = df_banco['age'],
+                                      bins=[18, 30, 40, 50, 60, 70, 80],
+                                      labels = [1, 2, 3, 4, 5, 6]).astype(int)
+      df_banco['rango_plazos_credito']=pd.cut(x = df_banco['duration_in_month'],
+                                                bins=[1, 12, 24, 36, 48, 60, 72],
+                                                labels = [1, 2, 3, 4, 5, 6]).astype(int)
+      df_banco['rango_valor_credito']=pd.cut(x = df_banco['credit_amount'],
+                                               bins=[1, 1000, 2000, 3000, 4000,
+                                                     5000, 6000, 7000, 8000, 9000,
+                                                     10000, 11000, 12000, 13000,
+                                                     14000, 15000, 16000, 17000,
+                                                     18000, 19000, 20000],
+                                               labels = [1, 2, 3, 4, 5, 6, 7, 8, 9,
+                                                         10, 11, 12, 13, 14, 15, 16,
+                                                         17, 18, 19, 20]).astype(int)
+      df_banco = df_banco.drop(columns=['personal_status_sex','age',
+                                        'duration_in_month','credit_amount'])
+         
+  
+  feature_engineering()
+  df_banco.head(2)
+```
+
+- se usa .cut() que permite definir rangos de valores tambien llamdas porciones que dependen del rangos preestablecidos
+- la funcion tambien elimina las columnas que fueron categorizadas como age, credit_amount etc. esto se hace ya que el modelo machine learning comprende mejor los datos que no son tan dispersos, por eso es recomendable **agrupar por rangos** de los datos cuando sea posible
+- usamos el metodo descripcion df_banco.describe(), que nos muestra el conteo, la media, desviacion estandar, minimo, maximo etc, para hacer un analisis estadistico
+- ahora necesitamos un grafico histograma que es de distribucion, por ejemplo de sexo, de monto etc, no apoyamos con chatgpt.
+- **prompt** genera un codigo en python que permita graficar un histograma con la variable 'sexo' utilizando matplotlib, seaborn y que tome los datos a partir de un dataframe creado por pandas llamado 'df_banco'
+
+```python
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+
+  # Crear el histograma con Matplotlib
+  plt.hist(df_banco['sexo'])
+  plt.xlabel('Sexo')
+  plt.ylabel('Frecuencia')
+  plt.title('Histograma de Sexo')
+  plt.show()
+  
+  # Crear el histograma con Seaborn
+  sns.histplot(data=df_banco, x='sexo')
+  plt.xlabel('Sexo')
+  plt.ylabel('Frecuencia')
+  plt.title('Histograma de Sexo')
+  plt.show()
+```
+otro ejemplo:
+
+```python
+  # Configurar el estilo de Seaborn (opcional)
+  sns.set(style="whitegrid")
+  
+  # Crear el histograma utilizando Seaborn
+  plt.figure(figsize=(5, 4))
+  sns.countplot(data=df_banco, x='sexo')
+  plt.title('Histograma de Sexo')
+  plt.xlabel('Sexo')
+  plt.ylabel('Frecuencia')
+  
+  # Mostrar el histograma
+  plt.show()
+```
 
 ### GOOGLE COLAB
 
