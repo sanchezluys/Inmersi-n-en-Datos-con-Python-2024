@@ -37,6 +37,10 @@
 - Dado que 6 tiene muy pocos datos con respecto a las demas categorias se recomienda eliminar
 - Para el caso 5 se recomienda mantener y evaluar el modelo con y sin esa categoria
 
+![Distribucion Default](/clase01/imagenes/distribucion_default.png)
+
+- Existe una mayor cantidad de casos con default 0 y un 50% menos aproximadamente de casos con default en 1
+- Ambos categorias son importantes ya que son la razon de ser del estudio
 
 ##### 2.- Investigar qué es y como crear un mapa de calor para analizar la correlación de las variables.
 
