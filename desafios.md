@@ -50,8 +50,9 @@ Correlación, positiva, negativa, 0-1, 0-1, con este grafico se puede analizar q
 
 Variables que se consideran importantes para el modelo:
 - Estado civil          -0.74
-- Creditos en el banco  +0.44
+- Sexo                  -0.74  // faltó incluirla
 - Plazos del credito    +0.61
+- Creditos en el banco  +0.44
 - Historial crediticio  -0.23
 - Estatus de chequera   -0.35
 - Rango de Edad         -0.25
