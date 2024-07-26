@@ -61,3 +61,11 @@ Variables que se consideran importantes para el modelo:
 ##### 3.- Crear una conclusión para cada uno de los gráficos del histograma. Mirar los datos y extraer conclusiones, porque es una habilidad esencial
 
 - respondida con el desafio 2
+
+
+#### Desafios CLASE 02
+
+Desafíos:
+- Evaluar la Matrix de Confusión
+- Balancear la variable target
+- Seleccionar sólo algunas variable y reevaluar
