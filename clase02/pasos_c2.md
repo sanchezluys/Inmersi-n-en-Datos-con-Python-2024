@@ -27,9 +27,30 @@ En esta aula avanzaremos con nuestro proyecto y comenzaremos a experimentar con 
   
 - **MODELADO MACHINE LEARNING**
     - Se toman 2 grupos de datos los de pruebas y los de entrenamiento.
-    - en y se guarda el dato a pronosticar, se llama variable **target: variable dependiente** en este caso el default, si el cliente pagará o no el credito.
-    - en x se guardan los demás datos menos la columna definida en y, **Features / Atributos: variables independientes** 
+    - en y se guarda el dato a pronosticar, se llama variable **target: variable dependiente / explicada** en este caso el default, si el cliente pagará o no el credito.
+    - en x se guardan los demás datos menos la columna definida en y, **Features / Atributos: variables independientes / explicativas** 
     - luego x explica a y
     - el modelo selecciona de manera aleatoria los datos para el entrenamiento y pruebas.
 
 ![Primeros Resultados del Modelo ML](/clase02/imagenes/primeros_resultados_ml.png)
+
+mejorando el formato del resultado:
+- AUC-ROC: area bajo la curva
+
+![Primeros Resultados Version 2](/clase02/imagenes/primeros_resultados_v2.png)
+
+graficando los resultados:
+
+![Grafica de los resultados](/clase02/imagenes/grafica_resultados.png)
+
+**se pueden ejecutar todos los pasos de un cuaderno con Ctrl + F9, para no tener que ejecutar uno a uno cuando se inicia el cuaderno**
+
+#### Metricas:
+
+- Exactitud (Accuracy) : en comparación con todas las clases, la métrica «Exactitud» muestra cuántas se predijeron correctamente.
+
+- Precisión : la métrica «Precisión» expresa cuántos de los resultados positivos que se han predicho son verdaderamente positivos.
+
+- Medida F1 score : la métrica «F1 score» se revela muy útil para comparar un modelo de alta sensibilidad (recall) con otro modelo de baja precisión.
+
+- Sensibilidad (Recall) : esta métrica indica con exactitud cuántas clases positivas se predijeron correctamente

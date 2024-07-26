@@ -66,6 +66,105 @@ Variables que se consideran importantes para el modelo:
 
 #### Desafios CLASE 02
 
-- Evaluar la Matrix de Confusión
-- Balancear la variable target
-- Seleccionar sólo algunas variable y reevaluar
+##### 1.- Evaluar la Matrix de Confusión
+
+Concepto: Imagina que eres un detective de animales y tu trabajo es identificar si un animal es un perro o un gato. Tienes una caja mágica (que en realidad es un modelo de computadora) que te ayuda a hacer esto.
+La matriz de confusión es como un reporte especial que muestra qué tan bien lo está haciendo tu caja mágica. Es como una tabla de resultados que tiene cuatro partes:
+
+- Aciertos de perros: Cuántas veces la caja dijo "perro" y realmente era un perro.
+- Aciertos de gatos: Cuántas veces la caja dijo "gato" y realmente era un gato.
+- Errores de perro: Cuántas veces la caja dijo "perro" pero en realidad era un gato.
+- Errores de gato: Cuántas veces la caja dijo "gato" pero en realidad era un perro.
+
+Aplicando la matriz de confusion al caso del banco:
+
+```python
+    # prompt: como puedo aplicar una matriz de confusion a los results_df 
+
+    from sklearn.metrics import confusion_matrix
+
+    def crea_modelos_con_matriz_confusion():
+    global df_banco, resultados
+    y = df_banco['default']
+    x = df_banco.drop(columns='default')
+    train_x, test_x, train_y, test_y = train_test_split(x, y, test_size=0.30, random_state = 77)
+
+    models = {
+        'Regresión Logística': LogisticRegression(),
+        'Árbol de Decisión': DecisionTreeClassifier(),
+        'Random Forest': RandomForestClassifier(),
+        'Naive Bayes': GaussianNB()
+    }
+
+    results = {'Model': [], 'Accuracy': [], 'Precision': [], 'Recall': [], 'F1-score': [], 'AUC-ROC': [], 'Confusion Matrix': []}
+
+    for name, model in models.items():
+        model.fit(train_x, train_y)
+        predictions = model.predict(test_x)
+        accuracy = accuracy_score(test_y, predictions)
+        precision = precision_score(test_y, predictions)
+        recall = recall_score(test_y, predictions)
+        f1 = f1_score(test_y, predictions)
+        if hasattr(model, "predict_proba"):
+            proba = model.predict_proba(test_x)
+            roc_auc = roc_auc_score(test_y, proba[:, 1])
+        else:
+            roc_auc = None
+        
+        # Calcular y almacenar la matriz de confusión
+        cm = confusion_matrix(test_y, predictions)
+
+        results['Model'].append(name)
+        results['Accuracy'].append(accuracy)
+        results['Precision'].append(precision)
+        results['Recall'].append(recall)
+        results['F1-score'].append(f1)
+        results['AUC-ROC'].append(roc_auc)
+        results['Confusion Matrix'].append(cm)
+
+    resultados = results
+
+    crea_modelos_con_matriz_confusion()
+
+    # Imprimir resultados incluyendo la matriz de confusión
+    for i in range(len(resultados['Model'])):
+        print("Model:", resultados['Model'][i])
+        print("Accuracy: {:.2f}".format(resultados['Accuracy'][i]))
+        print("Precision: {:.2f}".format(resultados['Precision'][i]))
+        print("Recall: {:.2f}".format(resultados['Recall'][i]))
+        print("F1-score: {:.2f}".format(resultados['F1-score'][i]))
+        if resultados['AUC-ROC'][i] is not None:
+        print("AUC-ROC: {:.2f}".format(resultados['AUC-ROC'][i]))
+        print("Confusion Matrix:")
+        print(resultados['Confusion Matrix'][i])
+        print("----")
+
+    # Visualización de la matriz de confusión (opcional)
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+
+    for i in range(len(resultados['Model'])):
+        plt.figure(figsize=(6, 4))
+        sns.heatmap(resultados['Confusion Matrix'][i], annot=True, fmt='g', cmap='Blues')
+        plt.xlabel('Predicted')
+        plt.ylabel('Actual')
+        plt.title(f'Confusion Matrix - {resultados["Model"][i]}')
+        plt.show()
+```
+Resultados graficos:
+
+![Matriz Confusion Regresion Logistica ](/clase02/imagenes/mc_regeresion_logistica.png)
+
+![Matriz de confusion Arbol de Decision](/clase02/imagenes/mc_arbol_decision.png)
+
+![Matriz de confusion Random Forest](/clase02/imagenes/mc_random_forest.png)
+
+![Matriz de confusion Naive Bayes](/clase02/imagenes/mc_naives_bayes.png)
+
+Se observa que el mas acertivo es **Random Forest** con 200/14, pero ninguno de los modelos es acertivo para predecir cuando el cliente no pagará, sino cuando pagará.
+
+#### 2.- Balancear la variable target
+
+
+
+#### 3.- Seleccionar sólo algunas variable y reevaluar
