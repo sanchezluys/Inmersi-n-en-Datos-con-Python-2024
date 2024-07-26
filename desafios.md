@@ -65,7 +65,6 @@ Variables que se consideran importantes para el modelo:
 
 #### Desafios CLASE 02
 
-Desafíos:
 - Evaluar la Matrix de Confusión
 - Balancear la variable target
 - Seleccionar sólo algunas variable y reevaluar
