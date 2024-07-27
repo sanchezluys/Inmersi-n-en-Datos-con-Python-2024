@@ -173,3 +173,33 @@ Una vez balanceado el target:
 
 #### 3.- Seleccionar sólo algunas variable y reevaluar
 
+- Se toman solo las variables que la correlacion sea mayor a 35%
+
+ 0   default                     1000 non-null   int64 
+ 1   account_check_status        1000 non-null   object
+ 2   duration_in_month           1000 non-null   int64 
+ 3   credit_history              1000 non-null   object
+ 6   savings                     1000 non-null   object
+ 9   personal_status_sex         1000 non-null   object
+ 12  property                    1000 non-null   object
+ 16  credits_this_bank           1000 non-null   int64 
+
+```python
+    df_filtrado = df_banco.drop(columns=['purpose', 'present_emp_since', 'installment_as_income_perc', 
+                                            'other_debtors', 'present_res_since', 'property', 
+                                            'other_installment_plans', 'housing', 'job', 
+                                            'people_under_maintenance', 'telephone', 'foreign_worker', 
+                                            'rango_edad', 'rango_valor_credito'])
+    df_filtrado.head()
+```
+
+Mapa de calor:
+
+![Mapa de Calor Filtrado](/clase02/imagenes/mapa_calor_filtrado.png)
+
+Resultados:
+
+![Resultados Filtrado](/clase02/imagenes/resultados_filtrado.png)
+
+- No se observan cambios notables con respecto a usar los datos completos
+- Da de nuevo como mejor modelo el **Naive Bayes**
