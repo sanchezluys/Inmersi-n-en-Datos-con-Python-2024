@@ -165,6 +165,11 @@ Se observa que el mas acertivo es **Random Forest** con 200/14, pero ninguno de 
 
 #### 2.- Balancear la variable target
 
+Una vez balanceado el target:
 
+![Resultados con Target Balanceado](/clase02/imagenes/resultados_target_balanceado.png)
+
+- De nuevo el modelo que mas acertividad tiene es el **Random Forest**
 
 #### 3.- Seleccionar sólo algunas variable y reevaluar
+
