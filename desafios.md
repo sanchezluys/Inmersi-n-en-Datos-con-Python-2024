@@ -203,3 +203,26 @@ Resultados:
 
 - No se observan cambios notables con respecto a usar los datos completos
 - Da de nuevo como mejor modelo el **Naive Bayes**
+
+
+## Pregunta en Discord:
+
+```javascript
+    hola a todos! dejo resultados de los desafíos clase 02, @Ingrid Silva / @Álvaro Camacho agradecería muchos sus comentarios, 
+    aunque estoy respondiendo los desafíos quedo con dudas si estoy realizando bien las cosas, por ejemplo en la matriz de confusión llego a la conclusión que el modelo predice mejor a los clientes que si van a pagar por lo que para mi no soluciona el problema del negocio, 
+    
+    2do: al balancear el target los resultados mejoran notablemente (todos sobre 50%) y da el mismo resultado que para mi el mejor modelo es el Random Forest , esta bien mi análisis?  
+    
+    3ro: descarté todas las variables con correlación menor al 35% esta bien esa decisión? No se notan cambios significativos en el resultado con respecto a usar todos los datos, dando como mejor opción Naives Bayes  y vuelvo a quedar en dudas entonces que criterio aplico para decidir si uso Random Forest o Naives Bayes??
+```
+
+Respuesta:
+
+    Ingrid Silva — hoy a las 6:53
+    Hola Sanchez, espero que este bién
+
+    Gracias por compartir tu resutado con nosotros. Recurdas de compartir también en LikendIN. 😊 
+
+    Respondendo a tu duda,tu análisis parece estar bien encaminado, especialmente al notar que el balanceo del target mejora notablemente los resultados y que Random Forest se destaca como el mejor modelo. Sin embargo, es crucial revisar métricas como precisión y recall para entender mejor el rendimiento del modelo, asegurándote de que se alinee con los objetivos de tu negocio. Si tu prioridad es minimizar falsos negativos o falsos positivos, esto influirá en la interpretación de la matriz de confusión y en la elección del modelo.
+
+    Al descartar variables con correlación menor al 35%, has simplificado el modelo sin observar cambios significativos en los resultados, lo cual puede ser positivo. Sin embargo, es recomendable utilizar métodos como el análisis de importancia de características de Random Forest para tomar decisiones más informadas sobre qué variables mantener. Comparar exhaustivamente las métricas clave entre Random Forest y Naive Bayes, considerando la complejidad y la naturaleza del problema, te ayudará a decidir cuál modelo es más adecuado para tus necesidades.
